@@ -33,7 +33,7 @@
         <div class="uppercase tracking-wide text-sm text-grey-dark font-bold">A project by</div>
         <div class="mt-6 -mx-8 lg:-mx-16 flex flex-row flex-wrap items-center">
             <div class="flex flex-col mx-8 lg:mx-16 w-32 items-center">
-                <img src="http://res.cloudinary.com/dwpkvglev/image/upload/c_crop,g_auto:face,w_1609/v1532871661/martbock.jpg" class="w-16 h-16 bg-grey-lighter rounded-full"/>
+                <img src="https://res.cloudinary.com/dwpkvglev/image/upload/c_crop,g_auto:face,w_1609/v1532871661/martbock.jpg" class="w-16 h-16 bg-grey-lighter rounded-full"/>
                 <div class="mt-4">
                     Martin Bock
                 </div>
