@@ -1,0 +1,9 @@
+.btn-xl {
+  @apply .mx-6 .flex-1 .bg-blue .border-2 .border-blue .text-white .no-underline .text-xl .px-6 .py-3 .shadow .rounded-full .select-none;
+  transition: all .15s ease-in-out;
+
+  &:hover, &:focus {
+    @apply .shadow-lg;
+    transform: scale(1.05) translateY(-.2rem);
+  }
+}

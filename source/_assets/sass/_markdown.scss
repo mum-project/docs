@@ -1,0 +1,88 @@
+.markdown {
+
+  > h1, > h2, > h3, > h4, > h5 {
+    @apply .py-1;
+  }
+
+  > h1 {
+    @apply .mt-8 .mb-6 .font-extrabold;
+  }
+
+  > h2 {
+    @apply .mt-8 .mb-2 .font-bold .text-3xl;
+  }
+
+  > h3, > h4, > h5 {
+    @apply .mt-4 .mb-1 .font-bold;
+  }
+
+  > p {
+    @apply .leading-normal .text-grey-darkest;
+  }
+
+  > code, p > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, td > code, li > code, a > code {
+    @apply .bg-grey-lighter .rounded .py-1 .px-2;
+  }
+
+  > code, p > code, pre > code, td > code, li > code, a > code {
+    @apply .text-sm;
+  }
+
+  h1 > code, h2 > code, h3 > code, h4 > code, h5 > code {
+    @apply .font-bold;
+  }
+
+  h1 > code {
+    @apply .text-3xl .px-3;
+  }
+
+  h2 > code {
+    @apply .text-xl .px-3;
+  }
+
+  h3 > code {
+    @apply .text-base .px-2;
+  }
+
+  h4 > code, h5 > code {
+    @apply .text-sm .px-2;
+  }
+
+  > ul, ol {
+    @apply .my-4 .text-grey-darkest;
+    > li {
+      @apply .mb-2 .leading-normal;
+    }
+  }
+
+  > hr {
+    @apply .bg-grey-lighter .h-px .my-6;
+  }
+
+  > table {
+    @apply .w-full .my-4 .overflow-x-auto .border-b .border-grey-light;
+    > thead > tr {
+        @apply .bg-grey-lightest .border-t .border-b .border-grey-light .rounded;
+        > th {
+          @apply .py-2 .px-4 .text-grey-darker .text-sm .text-left .font-semibold;
+        }
+    }
+    > tbody > tr {
+      @apply .border-b .border-grey-lighter;
+      &:last-child {
+        border: none;
+      }
+      > td {
+        @apply .py-2 .px-4;
+      }
+    }
+  }
+
+  p > a {
+    @apply .text-blue .underline;
+    &:hover, &:focus {
+      @apply .no-underline;
+    }
+  }
+
+}
