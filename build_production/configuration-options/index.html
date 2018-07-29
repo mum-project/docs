@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://mum-project.github.io/docs/assets/css/main.css?id=b056380c63c5972857bf">
+    <title>MUM Docs</title>
+</head>
+<body>
+<div id="root" class="font-sans bg-white antialiased min-h-screen flex flex-col md:flex-row justify-center">
+    <div class="w-full absolute bg-white pin-t pin-x z-30 h-16 border-b border-grey-lighter">
+        <div class="flex flex-row items-center justify-between h-16 max-w-4xl px-2 w-full mx-auto">
+            <div class="flex flex-row items-center text-grey-darker">
+                <a href="https://mum-project.github.io/docs" class="mx-4 text-xl font-extrabold text-grey-dark no-underline hover:text-grey-darkest focus:text-grey-darkest">MUM</a>
+                <div class="mx-4 text-grey-dark">v0.1.0</div>
+            </div>
+            <div class="flex flex-row items-center mx-4 text-grey-darker">
+                <a href="https://github.com/mum-project/mum" target="_blank" rel="noreferrer noopener" class="mx-4 text-grey-dark hover:text-grey-darker focus:text-grey-darker">
+                    <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>
+                            GitHub</title>
+                        <path d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="pt-16 flex flex-col min-h-screen md:flex-row w-full max-w-4xl justify-center z-20">
+        <div class="text-grey-darker md:w-64 flex flex-col z-20 relative h-full">
+    <div class="sticky pin-t flex flex-col md:overflow-y-auto md:w-64 truncate">
+                    <div class="mt-6 mb-2 px-6 text-grey uppercase tracking-wide font-bold text-xs">Introduction</div>
+                            <a class="text-grey-darker px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/what-is-mum"
+                >
+                    What is MUM
+                </a>
+                                <div class="mt-6 mb-2 px-6 text-grey uppercase tracking-wide font-bold text-xs">Getting Started</div>
+                            <a class="text-grey-darker px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/installation"
+                >
+                    Installation
+                </a>
+                            <a class="text-grey-darker px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/postfix-and-dovecot"
+                >
+                    Postfix and Dovecot
+                </a>
+                            <a class="text-blue-dark font-semibold px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/configuration-options"
+                >
+                    Configuration Options
+                </a>
+                        </div>
+</div>        <div class="sm:px-3 flex flex-col flex-grow items-center z-10">
+            <div class="markdown px-6 py-2 mb-8 w-full flex-grow max-w-lg">
+                <div class="mt-6 mb-6">
+                    <h1 class="font-extrabold mb-3">Configuration Options</h1>
+                                    </div>
+                <div class="py-3 pl-4 pr-4 my-4 bg-blue text-white rounded flex flex-row items-start">
+    <div class="text-white mr-4">
+        <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24">
+            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0v-4a1 1 0 0 1 1-1zm0-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+        </svg>
+    </div>
+    <div class="leading-normal">
+        <div class="flex-grow flex flex-col">
+        <div class="font-bold mb-1">Work in progress</div>
+        <p class="text-sm">Not all information is included in the docs yet, but we are working on it!</p>
+    </div>
+    </div>
+</div>
+<p>All main configurations take place in the <code>.env</code> file. We provide an <code>.env.example</code> file.
+Here you can find all keys you have to configure for running MUM.  </p>
+<h2>General Config</h2>
+<h4><code>APP_NAME</code></h4>
+<p>The name of the application.</p>
+<p>Default: <code>MUM</code></p>
+<h4><code>APP_ENV</code></h4>
+<p>The environment of the application.</p>
+<p>Default: <code>production</code></p>
+<h4><code>APP_KEY</code></h4>
+<p>The encryption key generated by the application. Generally speaking, you should not change this value yourself.</p>
+<h4><code>APP_DEBUG</code></h4>
+<p>Whether the application is in debug mode. If debug mode is enabled, exception stacktraces will be shown to the
+user. This is <strong>dangerous</strong> and should not be enabled on production machines.</p>
+<p>Default: <code>false</code></p>
+<h4><code>APP_URL</code></h4>
+<p>The URL where MUM's web interface is available. Example: <code>https://mum.example.com</code></p>
+<h4><code>TIMEZONE</code></h4>
+<p>Which timezone to use, have a look at the
+<a href="https://secure.php.net/manual/en/timezones.php">PHP manual on supported timezones</a> for all options.</p>
+<p>Default: <code>Europe/Berlin</code></p>
+<h4><code>LOG_CHANNEL</code></h4>
+<p>This option defines the default log channel that gets used when writing messages to the logs.
+The name specified in this option should match one of the channels defined in the <code>channels</code> configuration array
+that can be found in <code>config/logging.php</code>.</p>
+<p>Default: <code>stack</code></p>
+<p>Available Drivers: <code>single</code>, <code>daily</code>, <code>slack</code>, <code>syslog</code>, <code>errorlog</code>, <code>monolog</code>, <code>custom</code>, <code>stack</code></p>
+<h2>Database</h2>
+<h4><code>DB_CONNECTION</code></h4>
+<p>Here you can specify which database driver you want to use. Since Postfix and Dovecot also need access
+to MUM's database, the option <code>mysql</code> should be selected.</p>
+<h4><code>DB_HOST</code></h4>
+<p>The host address where the database service is running.</p>
+<p>Default: <code>127.0.0.1</code></p>
+<h4><code>DB_PORT</code></h4>
+<p>The port where the database service is running.</p>
+<p>Default: <code>3306</code></p>
+<h4><code>DB_DATABASE</code></h4>
+<p>Which database should be used by MUM. It should not be used by any other application.</p>
+<h4><code>DB_USERNAME</code></h4>
+<p>Which username MUM should use to connect to the database. This user needs to have all necessary privileges
+for the database.</p>
+<h4><code>DB_PASSWORD</code></h4>
+<p>The password to authenticate with the provided username against the database host.</p>
+<h2>Drivers</h2>
+<h4><code>HASHING_DRIVER</code></h4>
+<p>Here you may specify the hashing driver MUM should use. We strongly recommend that you use either Bcrypt or Argon,
+but if your environment does not support these algorithms, you may also choose SHA512 or SHA256.</p>
+<p>Supported: <code>sha256</code>, <code>sha512</code>, <code>bcrypt</code>, <code>argon</code></p>
+<div class="py-3 pl-4 pr-4 my-4 bg-blue text-white rounded flex flex-row items-start">
+    <div class="text-white mr-4">
+        <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24">
+            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0v-4a1 1 0 0 1 1-1zm0-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+        </svg>
+    </div>
+    <div class="leading-normal">
+        Be aware that Dovecot has to be configured to use the same hashing algorithm. Otherwise, Dovecot will not be able
+to authenticate your users.
+Have a look at <a class="text-white hover:no-underline focus:no-underline" href="/docs/postfix-and-dovecot/#dovecot-sql-file">MUM's documentation on Dovecot's SQL file</a> for details.
+    </div>
+</div>
+<h4><code>CACHE_DRIVER</code></h4>
+<p>This option controls the default cache connection that gets used while using this caching library.
+This connection is used when another is not explicitly specified when executing a given caching function.</p>
+<p>Default: <code>file</code></p>
+<p>Supported: <code>apc</code>, <code>array</code>, <code>database</code>, <code>file</code>, <code>memcached</code>, <code>redis</code></p>
+<h4><code>QUEUE_DRIVER</code></h4>
+<p>Laravel's queue API supports an assortment of back-ends via a single API, giving you convenient access
+to each back-end using the same syntax for every one. Here you may define a default connection.</p>
+<p>Default: <code>sync</code></p>
+<p>Drivers: <code>sync</code>, <code>database</code>, <code>beanstalkd</code>, <code>sqs</code>, <code>redis</code>, <code>null</code></p>
+<h4><code>SESSION_DRIVER</code></h4>
+<p>This option controls the default session &quot;driver&quot; that will be used on requests.
+By default, we will use the lightweight native driver but you may specify any of the other wonderful drivers provided here.</p>
+<p>Default: <code>file</code></p>
+<p>Supported: <code>file</code>, <code>cookie</code>, <code>database</code>, <code>apc</code>, <code>memcached</code>, <code>redis</code>, <code>array</code></p>
+<h3>SQS</h3>
+<p>Amazon Simple Queue Service is a distributed message queuing service that may be used as a queue or session driver
+in MUM. If you want to use it, you need to configure the following settings:</p>
+<h4><code>SQS_KEY</code></h4>
+<p>Your public key.</p>
+<h4><code>SQS_SECRET</code></h4>
+<p>Your secret key.</p>
+<h4><code>SQS_PREFIX</code></h4>
+<p>Something like <code>https://sqs.us-east-1.amazonaws.com/your-account-id</code>.</p>
+<h4><code>SQS_QUEUE</code></h4>
+<p>Your queue name.</p>
+<h4><code>SQS_REGION</code></h4>
+<p>E.g. us-east-1</p>
+<h3>Redis</h3>
+<p>Redis is an open source, fast, and advanced key-value store that also provides a richer set of commands
+than a typical key-value systems such as APC or Memcached. Laravel makes it easy to dig right in.</p>
+<h4><code>REDIS_HOST</code></h4>
+<p>The redis host that should be used.</p>
+<p>Default: <code>127.0.0.1</code></p>
+<h4><code>REDIS_PASSWORD</code></h4>
+<p>The password that is used to authenticate.</p>
+<p>Default: <code>null</code></p>
+<h4><code>REDIS_PORT</code></h4>
+<p>The port where the redis service is running.</p>
+<p>Default: <code>6379</code></p>
+<h4><code>REDIS_DATABASE</code></h4>
+<p>The database that should be used.</p>
+<p>Default: <code>0</code></p>
+<h2>Session</h2>
+<h4><code>SESSION_LIFETIME</code></h4>
+<p>Here you may specify the number of minutes that you wish the session to be allowed to remain idle before it expires.</p>
+<p>Default: <code>120</code></p>
+<h4><code>SESSION_EXPIRE_ON_CLOSE</code></h4>
+<p>If you want the session to immediately expire on the browser closing, set that option.</p>
+<p>Default: <code>false</code></p>
+<h2>Email</h2>
+<h4><code>MAIL_DRIVER</code></h4>
+<p>The mail driver that should be used for MUM to send emails (like notifications).</p>
+<p>Default: <code>smtp</code></p>
+<p>Supported: <code>smtp</code>, <code>sendmail</code></p>
+<h4><code>MAIL_HOST</code></h4>
+<p>The SMTP host that should be used to send outgoing emails.</p>
+<p>Default: <code>127.0.0.1</code></p>
+<h4><code>MAIL_PORT</code></h4>
+<p>The SMTP host's port where outgoing email should be submitted.</p>
+<p>Default: <code>587</code> (Submission)</p>
+<h4><code>MAIL_USERNAME</code></h4>
+<p>The username that MUM will use to authenticate when sending emails.
+If you want MUM to generate credentials for itself when installing, this value will be automatically set.</p>
+<h4><code>MAIL_PASSWORD</code></h4>
+<p>The password that MUM will use to authenticate when sending emails.
+If you want MUM to generate credentials for itself when installing, this value will be automatically set.</p>
+<h4><code>MAIL_ENCRYPTION</code></h4>
+<p>Here you may specify the encryption protocol that should be used when the application send e-mail messages.
+A sensible default using the transport layer security protocol should provide great security.</p>
+<p>Default: <code>tls</code></p>
+<h4><code>MAIL_FROM_ADDRESS</code></h4>
+<p>The global &quot;From&quot; address that MUM will use when sending emails.</p>
+<h4><code>MAIL_FROM_NAME</code></h4>
+<p>The global &quot;From&quot; name that MUM will use when sending emails.</p>
+<p>Default: <a href="#app_name"><code>APP_NAME</code></a></p>
+<h2>Validation</h2>
+<h4><code>PASSWORD_MIN_LENGTH</code></h4>
+<p>The minimum password length that will be required by MUM.</p>
+<p>Default: <code>8</code></p>
+<h4><code>VALIDATE_LOCAL_PART</code></h4>
+<p>Whether the local part of email addresses should be validated. If you want to use unconventional (non-RFC-compliant)
+local parts, you may disable their validation here.</p>
+<p>Default: <code>true</code></p>
+<h4><code>ALLOW_UNICODE_LOCAL_PART</code></h4>
+<p>Whether to allow local parts to include unicode characters. You may disable that possibility, if your environment
+does not support unicode characters in email addresses.</p>
+<p>Default: <code>true</code></p>
+<h4><code>VALIDATE_DOMAIN</code></h4>
+<p>Whether to validate domains. If you want to use unconventional domain names, you may disable their validation here.</p>
+<p>Default: <code>true</code></p>
+<h4><code>VALIDATE_DOMAIN_AS_HOSTNAME</code></h4>
+<p>Whether domain validation should allow values that do not have a top level domain. This may be helpful if you want
+to use MUM in a local environment.</p>
+<p>Default: <code>false</code></p>
+<h2>Domain Defaults</h2>
+<h4><code>DOMAINS_QUOTA</code></h4>
+<p>The standard quota value for new domains. Zero means unlimited.</p>
+<p>Default: <code>0</code></p>
+<h4><code>DOMAINS_MAX_QUOTA</code></h4>
+<p>The standard maximum mailbox quota value for new domains.</p>
+<p>Default: <code>null</code></p>
+<h2>Mailboxes</h2>
+<h4><code>MAILBOXES_ROOT_DIRECTORY</code></h4>
+<p>The base directory where Dovecot saves all emails.
+This value is needed so MUM can interpret the size report by the mailbox size crawler
+for said directory.</p>
+<p>Default: <code>/srv/mail/mailboxes</code></p>
+<h4><code>MAILBOXES_HOMEDIR</code></h4>
+<p>Here you can set the default home directory path for new mailboxes.
+Have a look at the <a href="https://wiki2.dovecot.org/VirtualUsers/Home">Dovecot documentation on home directories</a> for details.<br>
+You may use the following placeholders (similar to Dovecot):</p>
+<ul>
+<li><code>%d</code> (Domain, e.g. &quot;example.com&quot;)</li>
+<li><code>%n</code> (Username / Local part, e.g. &quot;jon.doe&quot;)</li>
+<li><code>%u</code> (User, eg. &quot;jon.doe@example.com&quot;)</li>
+</ul>
+<p>Default: <code>/srv/mail/mailboxes/%d/%n</code></p>
+<h4><code>MAILBOXES_MAILDIR</code></h4>
+<p>Here you can set the default mail directory path for new mailboxes.
+Have a look at the <a href="https://wiki2.dovecot.org/VirtualUsers/Home#Home_vs._mail_directory">Dovecot documentation on home vs. mail directories</a> for details.<br>
+You may use the following placeholders (similar to Dovecot):</p>
+<ul>
+<li><code>%d</code> (Domain, e.g. &quot;example.com&quot;)</li>
+<li><code>%n</code> (Username / Local part, e.g. &quot;jon.doe&quot;)</li>
+<li><code>%u</code> (User, eg. &quot;jon.doe@example.com&quot;)</li>
+</ul>
+<p>Default: <code>maildir:/srv/mail/mailboxes/%d/%n:LAYOUT=fs</code></p>
+<h2>Aliases</h2>
+<h4><code>ALIASES_DEACTIVATE_AT_DEFAULT_DAYS</code></h4>
+<p>The default value of days for automatically deactivating aliases.</p>
+<p>Default: <code>0</code></p>
+<h4><code>ALIASES_DEACTIVATE_AT_DEFAULT_HOURS</code></h4>
+<p>The default value of hours for automatically deactivating aliases.</p>
+<p>Default: <code>0</code></p>
+<h4><code>ALIASES_DEACTIVATE_AT_DEFAULT_MINUTES</code></h4>
+<p>The default value of minutes for automatically deactivating aliases.</p>
+<p>Default: <code>10</code></p>
+<h2>System Health</h2>
+<h4><code>SYSTEM_HEALTH_CHECK_SERVICES</code></h4>
+<p>Here you can specify whether system services should be monitored using <code>systemctl</code>.
+Be aware that your system needs to use <code>systemd</code> for this to work.</p>
+<p>Default: <code>false</code></p>
+<h4><code>SYSTEM_HEALTH_CHECK_FREQUENCY</code></h4>
+<p>Here you can specify the check frequency for service health checks.</p>
+<p>Default: <code>5min</code></p>
+<p>Supported: <code>1min</code>, <code>5min</code>, <code>10min</code>, <code>15min</code>, <code>30min</code></p>
+<h4><code>SYSTEM_HEALTH_MAX_ENTRIES_INCIDENT_HISTORY</code></h4>
+<p>Here you can specify how long to keep track of the incident history, meaning all health checks that
+did not return a <code>running</code> state.</p>
+<p>Default: <code>100</code></p>
+<h2>Integrations</h2>
+<p>With integrations you can include external applications in MUM's workflow. If another program needs to
+know when a new mailbox is created, you can utilize an integration to let it know.</p>
+<div class="py-3 pl-4 pr-4 my-4 bg-red-light text-white rounded flex flex-row items-start">
+    <div class="text-white mr-4">
+        <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path class="heroicon-ui" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 9a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+        </svg>
+    </div>
+    <div class="leading-normal">
+        <strong>Attention!</strong>
+This configuration can have severe implications regarding your system's security.
+Use this feature only if you know what you're doing.
+    </div>
+</div>
+<h4><code>ENABLE_INTEGRATIONS</code></h4>
+<p>Here you can specify if integrations should be enabled generally. If they are disabled, MUM's web interface
+won't show any pages related to integrations.</p>
+<p>Default: <code>false</code></p>
+<h3>Shell Commands</h3>
+<p>Here you can specify up to 10 shell commands that you want to allow to be executed
+with an integration configurable in MUM's web interface.
+You may configure them with <code>INTEGRATIONS_SHELL_COMMAND_01</code> &mdash; <code>INTEGRATIONS_SHELL_COMMAND_10</code>.
+These commands will be executed by your web server user. You may want to use full paths.</p>
+<h4><code>INTEGRATIONS_ENABLE_SHELL_COMMANDS</code></h4>
+<p>Here you can specify whether this integration type should be enabled.</p>
+<p>Default: <code>false</code></p>
+<h4><code>INTEGRATIONS_SHELL_COMMANDS_ALLOW_PARAMETERS</code></h4>
+<p>Here you can specify if administrators can configure shell command parameters in MUM's web interface.</p>
+<p>Default: <code>false</code></p>
+<h4><code>INTEGRATIONS_SHELL_COMMANDS_FAILED_RETRY_DELAY</code></h4>
+<p>Here you can specify the retry delay after a failed shell command integration in seconds.</p>
+<p>Default: <code>10</code></p>
+<h3>Webhooks</h3>
+<h4><code>INTEGRATIONS_ENABLE_WEB_HOOKS</code></h4>
+<p>Here you can specify whether this integration type should be enabled.</p>
+<p>Default: <code>false</code></p>
+<h4><code>INTEGRATIONS_WEB_HOOKS_FAILED_RETRY_DELAY</code></h4>
+<p>Here you can specify the retry delay after a failed webhook integration in seconds.</p>
+<p>Default: <code>60</code></p>
+<h2>Size Measurements</h2>
+<p>Here you can set whether old size measurements should be deleted automatically.
+You may also specify after what time a record should be deleted. The provided values will be subtracted from
+the current timestamp. For example, you could automatically delete all records older than 5 months, 2 weeks and 15 days.</p>
+<h4><code>SIZE_MEASUREMENTS_DELETE_OLD</code></h4>
+<p>Default: <code>true</code></p>
+<h4><code>SIZE_MEASUREMENTS_DELETE_AFTER_MONTHS</code></h4>
+<p>Default: <code>12</code></p>
+<h4><code>SIZE_MEASUREMENTS_DELETE_AFTER_WEEKS</code></h4>
+<p>Default: <code>0</code></p>
+<h4><code>SIZE_MEASUREMENTS_DELETE_AFTER_DAYS</code></h4>
+<p>Default: <code>0</code></p>
+<h2>Dashboard Email Settings</h2>
+<p>Here you can set the default settings for SMTP, IMAP and POP3 for clients that will be displayed for users.</p>
+<h4><code>SHOW_EMAIL_SETTINGS</code></h4>
+<p>If this is enabled, the dashboard will show the default settings for email clients.</p>
+<p>Default <code>true</code></p>
+<h4><code>SMTP_HOSTNAME</code></h4>
+<p>The hostname for SMTP connections. Example: <code>smtp.example.com</code></p>
+<h4><code>SMTP_PORT</code></h4>
+<p>The port for SMTP connections. Example: <code>587</code> (Submission)</p>
+<h4><code>SMTP_SSL</code></h4>
+<p>The encryption mode for SMTP connections. Example: <code>STARTTLS</code></p>
+<h4><code>IMAP_HOSTNAME</code></h4>
+<p>The hostname for IMAP connections. Example: <code>imap.example.com</code></p>
+<h4><code>IMAP_PORT</code></h4>
+<p>The port for IMAP connections. Example: <code>993</code></p>
+<h4><code>IMAP_SSL</code></h4>
+<p>The encryption mode for IMAP connections. Example: <code>SSL/TLS</code></p>
+<h4><code>POP3_HOSTNAME</code></h4>
+<p>The hostname for POP3 connections. Example: <code>pop3.example.com</code></p>
+<h4><code>POP3_PORT</code></h4>
+<p>The port for POP3 connections. Example: <code>995</code></p>
+<h4><code>POP3_SSL</code></h4>
+<p>The encryption mode for POP3 connections. Example: <code>SSL/TLS</code></p>            </div>
+        </div>
+        <div class="text-grey-darker md:w-64 h-full flex flex-col z-20">
+    <div class="sticky pin-t md:flex flex-col md:w-64 truncate">
+        <div class="py-6 md:overflow-hidden md:overflow-y-auto">
+            <table-of-contents></table-of-contents>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<script src="https://mum-project.github.io/docs/assets/js/prism.js"></script>
+<script src="https://mum-project.github.io/docs/assets/js/main.js?id=1f369b8bb3c56531e390"></script>
+</body>
+</html>

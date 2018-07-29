@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://mum-project.github.io/docs/assets/css/main.css?id=b056380c63c5972857bf">
+    <title>MUM Docs</title>
+</head>
+<body>
+<div id="root" class="font-sans bg-white antialiased min-h-screen flex flex-col md:flex-row justify-center">
+    <div class="w-full absolute bg-white pin-t pin-x z-30 h-16 border-b border-grey-lighter">
+        <div class="flex flex-row items-center justify-between h-16 max-w-4xl px-2 w-full mx-auto">
+            <div class="flex flex-row items-center text-grey-darker">
+                <a href="https://mum-project.github.io/docs" class="mx-4 text-xl font-extrabold text-grey-dark no-underline hover:text-grey-darkest focus:text-grey-darkest">MUM</a>
+                <div class="mx-4 text-grey-dark">v0.1.0</div>
+            </div>
+            <div class="flex flex-row items-center mx-4 text-grey-darker">
+                <a href="https://github.com/mum-project/mum" target="_blank" rel="noreferrer noopener" class="mx-4 text-grey-dark hover:text-grey-darker focus:text-grey-darker">
+                    <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>
+                            GitHub</title>
+                        <path d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="pt-16 flex flex-col min-h-screen md:flex-row w-full max-w-4xl justify-center z-20">
+        <div class="text-grey-darker md:w-64 flex flex-col z-20 relative h-full">
+    <div class="sticky pin-t flex flex-col md:overflow-y-auto md:w-64 truncate">
+                    <div class="mt-6 mb-2 px-6 text-grey uppercase tracking-wide font-bold text-xs">Introduction</div>
+                            <a class="text-grey-darker px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/what-is-mum"
+                >
+                    What is MUM
+                </a>
+                                <div class="mt-6 mb-2 px-6 text-grey uppercase tracking-wide font-bold text-xs">Getting Started</div>
+                            <a class="text-grey-darker px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/installation"
+                >
+                    Installation
+                </a>
+                            <a class="text-blue-dark font-semibold px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/postfix-and-dovecot"
+                >
+                    Postfix and Dovecot
+                </a>
+                            <a class="text-grey-darker px-6 mb-1 py-1 text-sm no-underline hover:text-black focus:text-black truncate"
+                   href="https://mum-project.github.io/docs/configuration-options"
+                >
+                    Configuration Options
+                </a>
+                        </div>
+</div>        <div class="sm:px-3 flex flex-col flex-grow items-center z-10">
+            <div class="markdown px-6 py-2 mb-8 w-full flex-grow max-w-lg">
+                <div class="mt-6 mb-6">
+                    <h1 class="font-extrabold mb-3">Integration with Postfix and Dovecot</h1>
+                                    </div>
+                <div class="py-3 pl-4 pr-4 my-4 bg-blue text-white rounded flex flex-row items-start">
+    <div class="text-white mr-4">
+        <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24">
+            <path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0v-4a1 1 0 0 1 1-1zm0-4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+        </svg>
+    </div>
+    <div class="leading-normal">
+        <div class="flex-grow flex flex-col">
+        <div class="font-bold mb-1">Work in progress</div>
+        <p class="text-sm">Not all information is included in the docs yet, but we are working on it!</p>
+    </div>
+    </div>
+</div>
+<p>For Postfix and Dovecot to be able to work with MUM, they need to be configured to use MUM's database
+as their lookup tables. The following steps will guide you through the process of setting all required options.</p>
+<h2>Postfix</h2>
+<p>Postfix needs to know which domains and mailbox users exist, so that emails to unknown recipient addresses can
+be refused. Moreover, since Postfix also handles outgoing emails, it needs to be able to authenticate sending users.
+The MySQL user for Postfix can be read-only, since Postfix won't change any values in the database.
+The following code snippets represent an excerpt from valid <code>main.cf</code> and <code>master.cf</code> configuration files that include
+all MySQL lookup files.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/main.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>smtp_tls_policy_maps = mysql:/etc/postfix/sql/tls-policies.cf
+...
+smtpd_recipient_restrictions = check_recipient_access mysql:/etc/postfix/sql/recipient-access.cf
+...
+virtual_alias_maps = mysql:/etc/postfix/sql/aliases.cf
+virtual_mailbox_maps = mysql:/etc/postfix/sql/mailboxes.cf
+virtual_mailbox_domains = mysql:/etc/postfix/sql/domains.cf
+local_recipient_maps = $virtual_mailbox_maps</code></pre>
+</div>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/master.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>...
+submission inet n       -       y       -       -       smtpd
+  ...
+  -o smtpd_sender_login_maps=mysql:/etc/postfix/sql/sender-login-maps.cf
+...</code></pre>
+</div>
+<p>Each of the following sections represent one configuration file for a MySQL lookup table.
+You should replace the following placeholders with the actual value on your machine:</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mum_postfix_user</code></td>
+<td>The MySQL user Postfix will use. This user should be read-only.</td>
+</tr>
+<tr>
+<td><code>mum_postfix_password</code></td>
+<td>A securely generated random password for Postfix's MySQL user.</td>
+</tr>
+<tr>
+<td><code>mum_database</code></td>
+<td>The database that MUM should use.</td>
+</tr>
+</tbody>
+</table>
+<div class="py-3 pl-4 pr-4 my-4 bg-red-light text-white rounded flex flex-row items-start">
+    <div class="text-white mr-4">
+        <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path class="heroicon-ui" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 9a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+        </svg>
+    </div>
+    <div class="leading-normal">
+        Be aware that all SQL statements of the following files <strong>must not</strong> contain any line breaks.
+Otherwise, Postfix will not be able to interpret your configuration.
+    </div>
+</div>
+<h3>TLS Policy Maps</h3>
+<p>This file is cool.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/sql/tls-policies.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>user = mum_postfix_user
+password = mum_postfix_password
+hosts = 127.0.0.1
+dbname = mum_database
+query = SELECT policy, params FROM tls_policies WHERE domain = '%s';</code></pre>
+</div>
+<h3>Recipient Access</h3>
+<p>This file is cool.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/sql/recipient-access.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>user = mum_postfix_user
+password = mum_postfix_password
+hosts = 127.0.0.1
+dbname = mum_database
+query = SELECT IF(send_only = 1, 'REJECT', 'OK') AS access FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 LIMIT 1;</code></pre>
+</div>
+<h3>Sender Login Maps</h3>
+<p>This file is cool</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/sql/sender-login-maps.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>user = mum_postfix_user
+password = mum_postfix_password
+hosts = 127.0.0.1
+dbname = mum_database
+query = SELECT CONCAT(mailboxes.local_part, '@', domains.domain) AS owns FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 UNION SELECT GROUP_CONCAT(CONCAT(mailboxes.local_part, '@', mailbox_domains.domain) SEPARATOR ',') AS owns FROM aliases INNER JOIN domains alias_domains ON aliases.domain_id = alias_domains.id INNER JOIN alias_senders ON aliases.id = alias_senders.alias_id INNER JOIN mailboxes ON alias_senders.mailbox_id = mailboxes.id INNER JOIN domains mailbox_domains ON mailboxes.domain_id = mailbox_domains.id WHERE aliases.local_part = '%u' AND alias_domains.domain = '%d' AND alias_domains.active = 1 AND mailbox_domains.active = 1 AND aliases.active = 1;</code></pre>
+</div>
+<h3>Virtual Alias Maps</h3>
+<p>This file is cool.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/sql/aliases.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>user = mum_postfix_user
+password = mum_postfix_password
+hosts = 127.0.0.1
+dbname = mum_database
+query = SELECT GROUP_CONCAT(DISTINCT alias_recipients.recipient_address SEPARATOR ',') FROM aliases INNER JOIN alias_recipients ON aliases.id = alias_recipients.alias_id INNER JOIN domains ON aliases.domain_id = domains.id WHERE aliases.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1;</code></pre>
+</div>
+<h3>Virtual Mailbox Maps</h3>
+<p>This file is cool.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/sql/mailboxes.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>user = mum_postfix_user
+password = mum_postfix_password
+hosts = 127.0.0.1
+dbname = mum_database
+query = SELECT 1 AS found FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 LIMIT 1;</code></pre>
+</div>
+<h3>Virtual Mailbox Domains</h3>
+<p>This file is cool.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/postfix/sql/domains.cf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>user = mum_postfix_user
+password = mum_postfix_password
+hosts = 127.0.0.1
+dbname = mum_database
+query = SELECT domain FROM domains WHERE domain = '%s' AND active = 1;</code></pre>
+</div>
+<h2>Dovecot</h2>
+<p>Just like Postfix, Dovecot needs access to the MUM database.
+The MySQL user for Dovecot can be read-only, since Dovecot won't change any values in the database.
+The following code snippet represents an excerpt from a valid <code>dovecot.conf</code> configuration file
+that specifies where Dovecot will find it's SQL queries to manage and authenticate users.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/
+    </div>
+    <pre class="m-0 p-4 language-html"><code>...
+passdb {
+    driver = sql
+    args = /etc/dovecot/dovecot-sql.conf
+}
+userdb {
+    driver = sql
+    args = /etc/dovecot/dovecot-sql.conf
+}
+...</code></pre>
+</div>
+<p>Each of the following sections represent one configuration file for a MySQL lookup table.
+You should replace the following placeholders with the actual value on your machine:</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mum_dovecot_user</code></td>
+<td>The MySQL user Dovecot will use. This user should be read-only.</td>
+</tr>
+<tr>
+<td><code>mum_dovecot_password</code></td>
+<td>A securely generated random password for Dovecot's MySQL user.</td>
+</tr>
+<tr>
+<td><code>mum_database</code></td>
+<td>The database that MUM should use.</td>
+</tr>
+</tbody>
+</table>
+<div class="py-3 pl-4 pr-4 my-4 bg-red-light text-white rounded flex flex-row items-start">
+    <div class="text-white mr-4">
+        <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path class="heroicon-ui" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 9a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+        </svg>
+    </div>
+    <div class="leading-normal">
+        Be aware that all SQL statements of the following files <strong>must not</strong> contain any line breaks.
+Otherwise, Dovecot will not be able to interpret your configuration.
+    </div>
+</div>
+<h3>Dovecot SQL File</h3>
+<p>This file contains the MySQL credentials and all of Dovecot's SQL queries.
+The <code>default_pass_scheme</code> needs to match MUM's password hashing algorithm. Otherwise, Dovecot will not be able
+to authenticate your users.
+We strongly recommend that you use either Argon or Bcrypt for password hashing. That said, most Linux
+distributions (like Debian) currently provide Dovecot packages that are too old to support Argon or Bcrypt.
+Have a look at the <a href="https://wiki.dovecot.org/Authentication/PasswordSchemes">Dovecot documentation on password schemes</a>
+for details on which version of Dovecot supports the hashing algorithm of your choice.
+If your Linux distribution does not support Argon and Bcrypt, you should probably use SHA512 or SHA256.</p>
+<div class="rounded my-3 overflow-hidden bg-grey-lightest">
+    <div class="bg-grey-dark text-white px-4 py-2 text-sm text-right font-mono">
+        /etc/dovecot/dovecot-sql.conf
+    </div>
+    <pre class="m-0 p-4 language-html"><code>driver = mysql
+connect = "host=127.0.0.1 dbname=mum_database user=mum_dovecot_user password=mum_dovecot_password"
+default_pass_scheme = BLF-CRYPT
+
+password_query = SELECT mailboxes.local_part AS username, domains.domain, mailboxes.password FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%n' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1;
+user_query = SELECT mailboxes.homedir AS home, mailboxes.maildir AS mail, CONCAT('*:storage=', COALESCE(mailboxes.quota, domains.quota, 0), 'G') AS quota_rule FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%n' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 AND mailboxes.send_only = 0;
+iterate_query = SELECT mailboxes.local_part AS username, domains.domain FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%n' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 AND mailboxes.send_only = 0;</code></pre>
+</div>            </div>
+        </div>
+        <div class="text-grey-darker md:w-64 h-full flex flex-col z-20">
+    <div class="sticky pin-t md:flex flex-col md:w-64 truncate">
+        <div class="py-6 md:overflow-hidden md:overflow-y-auto">
+            <table-of-contents></table-of-contents>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<script src="https://mum-project.github.io/docs/assets/js/prism.js"></script>
+<script src="https://mum-project.github.io/docs/assets/js/main.js?id=1f369b8bb3c56531e390"></script>
+</body>
+</html>
