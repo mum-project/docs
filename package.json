@@ -5,8 +5,7 @@
         "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --hide-modules --env=staging --config=node_modules/laravel-mix/setup/webpack.config.js",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
         "dev": "npm run local",
-        "watch": "npm run local -- --watch",
-        "deploy": "npm run production && git add build_production && git commit -m \"Build for deploy\" && git subtree push --prefix build_production origin gh-pages"
+        "watch": "npm run local -- --watch"
     },
     "devDependencies": {
         "browser-sync": "^2.24.6",
