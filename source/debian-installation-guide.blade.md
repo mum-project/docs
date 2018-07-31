@@ -17,7 +17,7 @@ Make sure your system is up-to-date and you have installed the following package
 @component('_components.code')
 @slot('lang', 'bash')
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install unzip curl wget acl
+sudo apt-get install unzip curl wget acl git
 @endcomponent
 
 
@@ -40,7 +40,7 @@ The following commands should be executed with root privileges (use `sudo` or lo
 
 @component('_components.code')
 @slot('lang', 'bash')
-apt-get install php7.2 php7.2-mbstring php7.2-xml php7.2-zip \
+sudo apt-get install php7.2 php7.2-mbstring php7.2-xml php7.2-zip \
 php7.2-cli php7.2-common php7.2-curl php7.2-json php7.2-mysql php7.2-opcache
 @endcomponent
 
@@ -59,11 +59,13 @@ Firstly, we need to install a database server. We are going to use MariaDB here.
 
 @component('_components.code')
 @slot('lang', 'bash')
-apt-get install mariadb-server
+sudo apt-get install mariadb-server
+sudo mysql -u root
 @endcomponent
 
-Secondly, we need to create the database and several users. Please choose **secure** passwords for your users. 
-[Diceware](https://www.eff.org/dice) is one way of generating secure passwords that are easily typeable and memorable.
+The last command opened a MySQL shell. Now, we need to create the database and several users. 
+Please choose **secure** passwords for your users. [Diceware](https://www.eff.org/dice) is one way of 
+generating secure passwords that are easily typeable and memorable.
 
 @component('_components.code')
 @slot('lang', 'sql')
@@ -75,6 +77,8 @@ GRANT ALL PRIVILEGES ON mum.* TO mum@localhost;
 GRANT SELECT ON mum.* TO mum_postfix@localhost;
 GRANT SELECT ON mum.* TO mum_dovecot@localhost;
 @endcomponent
+
+To exit the MySQL shell, simply type `exit;`.
 
 
 ## Configuring Apache2
@@ -112,7 +116,7 @@ We are going to use `mum.example.com` here, please change that name to your doma
 
 @component('_components.code')
 @slot('lang', 'bash')
-nano /etc/apache2/sites-available/mum.example.com.conf
+sudo nano /etc/apache2/sites-available/mum.example.com.conf
 @endcomponent
 
 Inside this configuration file we need to specify a virtual host that listens on port 443.
@@ -158,16 +162,6 @@ leave out the `ServerName` directive.
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
 </VirtualHost>
-@endcomponent
-
-## Installing Git
-
-To be able to clone MUM from GitHub, make sure you have `git` installed on your machine.
-If you haven't, execute the following command to install it:
-
-@component('_components.code')
-@slot('lang', 'bash')
-apt-get install git
 @endcomponent
 
 ## Installing Composer
