@@ -21,7 +21,8 @@
   }
 
   > code, p > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, td > code, li > code, a > code {
-    @apply .bg-grey-lighter .rounded .py-1 .px-2;
+    @apply .bg-grey-lighter .rounded;
+    padding: .1rem .4rem;
   }
 
   > code, p > code, pre > code, td > code, li > code, a > code {

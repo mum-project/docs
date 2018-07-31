@@ -5,8 +5,9 @@ return [
         'What is MUM' => 'what-is-mum'
     ],
     'Getting Started' => [
-        'Installation'          => 'installation',
-        'Postfix and Dovecot'   => 'postfix-and-dovecot',
-        'Configuration Options' => 'configuration-options',
+        'Installation'              => 'installation',
+        'Debian Installation Guide' => 'debian-installation-guide',
+        'Postfix and Dovecot'       => 'postfix-and-dovecot',
+        'Configuration Options'     => 'configuration-options',
     ],
 ];

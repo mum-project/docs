@@ -87,7 +87,7 @@ Supported: `sha256`, `sha512`, `bcrypt`, `argon`
 @component('_components.info')
 Be aware that Dovecot has to be configured to use the same hashing algorithm. Otherwise, Dovecot will not be able
 to authenticate your users.
-Have a look at <a class="text-white hover:no-underline focus:no-underline" href="/docs/postfix-and-dovecot/#dovecot-sql-file">MUM's documentation on Dovecot's SQL file</a> for details.
+Have a look at <a class="text-white hover:no-underline focus:no-underline" href="{{ $page->basePath}}/postfix-and-dovecot/#dovecot-sql-file">MUM's documentation on Dovecot's SQL file</a> for details.
 @endcomponent
 
 #### `CACHE_DRIVER`

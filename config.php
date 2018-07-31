@@ -8,7 +8,7 @@ return [
     'active' => function ($page, $path) {
         $pages = collect(array_wrap($page));
         return $pages->contains(function ($page) use ($path) {
-            return str_contains($page->getPath(), $path);
+            return substr_compare($page->getPath(), $path, -strlen($path), strlen($path)) === 0;
         });
     },
     'version' => 'v0.1.0'
