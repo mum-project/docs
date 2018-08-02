@@ -24,7 +24,7 @@ sudo apt-get install unzip curl wget acl git
 ## Installing PHP 7.2
 
 Since Debian Stretch only ships with PHP 7.0 (as of 2018), we have to install a new package repository that allows
-us to download newer versions of PHP. The following commands should be executed with root privileges 
+us to download newer versions of PHP. The following commands should be executed with root privileges
 (use `sudo` or login with user `root`).
 
 @component('_components.code')
@@ -63,8 +63,8 @@ sudo apt-get install mariadb-server
 sudo mysql -u root
 @endcomponent
 
-The last command opened a MySQL shell. Now, we need to create the database and several users. 
-Please choose **secure** passwords for your users. [Diceware](https://www.eff.org/dice) is one way of 
+The last command opened a MySQL shell. Now, we need to create the database and several users.
+Please choose **secure** passwords for your users. [Diceware](https://www.eff.org/dice) is one way of
 generating secure passwords that are easily typeable and memorable.
 
 @component('_components.code')
@@ -166,7 +166,7 @@ leave out the `ServerName` directive.
 
 ## Installing Composer
 
-The next thing we need is the PHP dependency manager [Composer](https://getcomposer.org/). 
+The next thing we need is the PHP dependency manager [Composer](https://getcomposer.org/).
 To install Composer, please follow the [instructions on how to install the latest version](https://getcomposer.org/download/).
 If you want to install Composer globally, execute the following line after you executed the installer script:
 
@@ -208,7 +208,7 @@ drwxr-xr-x  5 user user   4096 Jul 31 12:38 storage
 ...
 @endcomponent
 
-Finally, we need to give Apache2's `www-data` user permissions to read, write and execute for the `storage` folder 
+Finally, we need to give Apache2's `www-data` user permissions to read, write and execute for the `storage` folder
 and all files within. Since we installed the `acl` package earlier, we can use `setfacl` to set default permissions
 for the user `www-data` and our own user `user`. Be sure to use your actual user name here.
 
@@ -237,7 +237,7 @@ default:user:user:rwx
 
 ## Configuring MUM
 
-The last step is to configure MUM's `.env` file to suit your environment. Please see our 
+The last step is to configure MUM's `.env` file to suit your environment. Please see our
 [page on configuration options]({{ $page->baseUrl }}/configuration-options) for details.
 One thing you surely need to configure are the mysql credentials. Be sure to use the actual credentials
 you used when creating the database users in the [MySQL section](#installing-mysql-mariadb).
@@ -251,6 +251,78 @@ DB_PORT=3306
 DB_DATABASE=mum
 DB_USERNAME=mum
 DB_PASSWORD=my_secret_password_1
+@endcomponent
+
+## Creating Your First User
+
+Since MUM does not have a web installer yet, you will need to use console commands to create your first user in MUM.
+Use the following commands to create a domain and a super admin mailbox:
+
+@component('_components.code')
+@lang('bash')
+php artisan domains:create example.com
+php artisan mailboxes:create admin example.com --super_admin --name='Super Admin'
+@endcomponent
+
+For a full list of command options, use the `--help` flag with the commands:
+
+@component('_components.code')
+@lang('bash')
+$ php artisan domains:create --help
+Usage:
+  domains:create [options] [--] <domain>
+
+Arguments:
+  domain                               Domain to create, eg. example.com
+
+Options:
+      --description[=DESCRIPTION]
+      --quota[=QUOTA]
+      --max_quota[=MAX_QUOTA]
+      --max_aliases[=MAX_ALIASES]
+      --max_mailboxes[=MAX_MAILBOXES]
+  -h, --help                           Display this help message
+  -q, --quiet                          Do not output any message
+  -V, --version                        Display this application version
+      --ansi                           Force ANSI output
+      --no-ansi                        Disable ANSI output
+  -n, --no-interaction                 Do not ask any interactive question
+      --env[=ENV]                      The environment the command should run under
+  -v|vv|vvv, --verbose                 Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Help:
+  Create a new domain. ATTENTION: This command currently does not perform ANY validation of supplied data.
+@endcomponent
+
+@component('_components.code')
+@lang('bash')
+$ php artisan mailboxes:create --help
+Usage:
+  mailboxes:create [options] [--] <local_part> <domain>
+
+Arguments:
+  local_part                                   The local part of the email address
+  domain                                       An existing domain in MUM
+
+Options:
+      --password[=PASSWORD]                    You are asked for a password if you don't supply this option. Be aware that the value of the password option may be recorded in your shell history.
+      --name[=NAME]                            The name of the person that uses the mailbox
+      --alternative_email[=ALTERNATIVE_EMAIL]  An alternative address that may be used to reset the password
+      --quota[=QUOTA]                          Maximum disk space for emails in GB
+      --send_only                              Whether the mailbox should be able to receive emails, defaults to false
+      --inactive                               Whether the mailbox should be inactive, defaults to false
+      --super_admin                            Whether the mailbox should be a super admin, defaults to false
+  -h, --help                                   Display this help message
+  -q, --quiet                                  Do not output any message
+  -V, --version                                Display this application version
+      --ansi                                   Force ANSI output
+      --no-ansi                                Disable ANSI output
+  -n, --no-interaction                         Do not ask any interactive question
+      --env[=ENV]                              The environment the command should run under
+  -v|vv|vvv, --verbose                         Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Help:
+  Create a new mailbox. ATTENTION: This command currently does not perform ANY validation of supplied data.
 @endcomponent
 
 ## Troubleshooting
@@ -273,6 +345,6 @@ If the error keeps happening, you probably haven't set the `storage` folder perm
 
 ---
 
-If you think you have spotted an error in this guide, please check if other people spotted it too by looking at 
+If you think you have spotted an error in this guide, please check if other people spotted it too by looking at
 the [GitHub issues in our docs repository](https://github.com/mum-project/docs/issues) first. If you are first,
 we would highly appreciate if you told us by opening a new issue or (even better) a pull request.

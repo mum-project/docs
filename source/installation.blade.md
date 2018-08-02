@@ -9,11 +9,11 @@ title: Installation
 Our ultimate goal is to have an easy-to-use web installer for MUM that generates a `.env` file based on your input.
 Unfortunately, someone has to write the necessary code. If you would like to contribute, we highly appreciate your help.
 
-For now, you will need to perform the following manual steps to install MUM. 
+For now, you will need to perform the following manual steps to install MUM.
 
 @component('_components.info')
-If you are worried about installing all of the requirements and MUM yourself, maybe have a look at our 
-<a class="text-white" href="{{ $page->baseUrl }}/debian-installation-guide">Debian Installation Guide</a> 
+If you are worried about installing all of the requirements and MUM yourself, maybe have a look at our
+<a class="text-white" href="{{ $page->baseUrl }}/debian-installation-guide">Debian Installation Guide</a>
 that explains every step along the way and provides the necessary shell commands for fast copy'n'pasting.
 @endcomponent
 
@@ -30,7 +30,7 @@ Please ensure that your server meets the following requirements:
 - XML PHP Extension
 - Ctype PHP Extension
 - JSON PHP Extension
-  
+
 You will also need a working webserver like Apache2 or NGINX and a MySQL/MariaDB database.
 
 ## Quick Start
@@ -52,4 +52,9 @@ You will also need a working webserver like Apache2 or NGINX and a MySQL/MariaDB
 4. Generate an application key with
     ```bash
     php artisan key:generate
+    ```
+5. Create your first user with
+    ```bash
+    php artisan domains:create example.com
+    php artisan mailboxes:create admin example.com --super_admin --name='Super Admin'
     ```
