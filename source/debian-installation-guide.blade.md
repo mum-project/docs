@@ -259,7 +259,7 @@ Since MUM does not have a web installer yet, you will need to use console comman
 Use the following commands to create a domain and a super admin mailbox:
 
 @component('_components.code')
-@lang('bash')
+@slot('lang', 'bash')
 php artisan domains:create example.com
 php artisan mailboxes:create admin example.com --super_admin --name='Super Admin'
 @endcomponent
@@ -267,7 +267,7 @@ php artisan mailboxes:create admin example.com --super_admin --name='Super Admin
 For a full list of command options, use the `--help` flag with the commands:
 
 @component('_components.code')
-@lang('bash')
+@slot('lang', 'bash')
 $ php artisan domains:create --help
 Usage:
   domains:create [options] [--] <domain>
@@ -295,7 +295,7 @@ Help:
 @endcomponent
 
 @component('_components.code')
-@lang('bash')
+@slot('lang', 'bash')
 $ php artisan mailboxes:create --help
 Usage:
   mailboxes:create [options] [--] <local_part> <domain>
