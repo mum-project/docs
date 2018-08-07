@@ -148,13 +148,13 @@ If you don't use Certbot with Let's Encrypt certificates, you will probably need
 </VirtualHost>
 @endcomponent
 
-The last step is to redirect all clients that use HTTP on port 80 to HTTPS on port 443.
+Now we need to redirect all clients that use HTTP on port 80 to HTTPS on port 443.
 To do that, you could either add a second `VirtualHost` definition in your configuration file or create a second
 file that only holds your HTTP host(s). If you want to redirect HTTP traffic for all your virtual hosts,
 leave out the `ServerName` directive.
 
 @component('_components.code_file')
-@slot('filename', '/etc/apache2/sites-available/http-mum.example.com.conf')
+@slot('filename', '/etc/apache2/sites-available/mum.example.com-http.conf')
 @slot('lang', 'apacheconf')
 <VirtualHost *:80>
     ServerName mum.example.com
@@ -162,6 +162,15 @@ leave out the `ServerName` directive.
     RewriteCond %{HTTPS} off
     RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
 </VirtualHost>
+@endcomponent
+
+The last step is to enable the new VirtualHost in Apache2. Please use your actual domain
+or rather the name of your `.conf` file. What this command does is to create a symbolic
+link from `/etc/sites-enabled/mum.example.com.conf` to `/etc/sites-available/mum.example.com.conf`.
+
+@component('_components.code')
+@slot('lang', 'bash')
+sudo a2ensite mum.example.com
 @endcomponent
 
 ## Installing Composer
@@ -251,6 +260,14 @@ DB_PORT=3306
 DB_DATABASE=mum
 DB_USERNAME=mum
 DB_PASSWORD=my_secret_password_1
+@endcomponent
+
+Another important step is to migrate the database. That means we are going to create the
+necessary tables in our database.
+
+@component('_components.code')
+@slot('lang', 'bash')
+php artisan migrate
 @endcomponent
 
 ## Creating Your First User
