@@ -52,7 +52,9 @@ Otherwise, Postfix will not be able to interpret your configuration.
 @endcomponent
 
 ### TLS Policy Maps
-This file is cool.
+For Postfix to be able to perform an SQL lookup on TLS policies, it needs to
+know the credentials and the concrete SQL command. This file provides that
+information to your Postfix server.
 
 @component('_components.code_file')
     @slot('filename', '/etc/postfix/sql/tls-policies.cf')
@@ -64,7 +66,9 @@ query = SELECT policy, params FROM tls_policies WHERE domain = '%s';
 @endcomponent
 
 ### Recipient Access
-This file is cool.
+For Postfix to be able to perform an SQL lookup on allowed recipients, it needs
+to know the credentials and the concrete SQL command. This file provides that
+information to your Postfix server.
 
 @component('_components.code_file')
     @slot('filename', '/etc/postfix/sql/recipient-access.cf')
@@ -76,7 +80,9 @@ query = SELECT IF(send_only = 1, 'REJECT', 'OK') AS access FROM mailboxes INNER 
 @endcomponent
 
 ### Sender Login Maps
-This file is cool
+For Postfix to be able to perform an SQL lookup on allowed senders, it needs
+to know the credentials and the concrete SQL command. This file provides that
+information to your Postfix server.
 
 @component('_components.code_file')
     @slot('filename', '/etc/postfix/sql/sender-login-maps.cf')
@@ -88,7 +94,9 @@ query = SELECT CONCAT(mailboxes.local_part, '@', domains.domain) AS owns FROM ma
 @endcomponent
 
 ### Virtual Alias Maps
-This file is cool.
+For Postfix to be able to perform an SQL lookup on allowed alias recipients, it
+needs to know the credentials and the concrete SQL command. This file provides
+that information to your Postfix server.
 
 @component('_components.code_file')
     @slot('filename', '/etc/postfix/sql/aliases.cf')
@@ -96,11 +104,13 @@ user = mum_postfix_user
 password = mum_postfix_password
 hosts = 127.0.0.1
 dbname = mum_database
-query = SELECT GROUP_CONCAT(DISTINCT alias_recipients.recipient_address SEPARATOR ',') FROM aliases INNER JOIN alias_recipients ON aliases.id = alias_recipients.alias_id INNER JOIN domains ON aliases.domain_id = domains.id WHERE aliases.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1;
+query = SELECT GROUP_CONCAT(DISTINCT alias_recipients.recipient_address SEPARATOR ',') FROM aliases INNER JOIN alias_recipients ON aliases.id = alias_recipients.alias_id INNER JOIN domains ON aliases.domain_id = domains.id WHERE aliases.local_part = '%u' AND domains.domain = '%d' AND aliases.active = 1 AND domains.active = 1;
 @endcomponent
 
 ### Virtual Mailbox Maps
-This file is cool.
+For Postfix to be able to perform an SQL lookup on available mailboxes, it needs
+to know the credentials and the concrete SQL command. This file provides that
+information to your Postfix server.
 
 @component('_components.code_file')
     @slot('filename', '/etc/postfix/sql/mailboxes.cf')
@@ -112,7 +122,9 @@ query = SELECT 1 AS found FROM mailboxes INNER JOIN domains ON mailboxes.domain_
 @endcomponent
 
 ### Virtual Mailbox Domains
-This file is cool.
+For Postfix to be able to perform an SQL lookup on available mailbox domains, it
+needs to know the credentials and the concrete SQL command. This file provides
+that information to your Postfix server.
 
 @component('_components.code_file')
     @slot('filename', '/etc/postfix/sql/domains.cf')
