@@ -17,6 +17,8 @@ deploy:
   github-token: $GITHUB_TOKEN
   keep-history: true
   local-dir: build_production
+  repo: mum-project/mum-project.github.io
+  target-branch: master
   on:
     branches:
       only:

@@ -1,5 +1,5 @@
 <?php
 return [
-    'baseUrl' => 'https://mum-project.github.io/docs',
+    'baseUrl' => 'https://mum-project.github.io',
     'production' => true,
 ];
