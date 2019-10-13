@@ -11,5 +11,6 @@ If you have installed all dependencies, build and view the site with:
 
 ```bash
 npm run production
+./vendor/bin/jigsaw build
 ./vendor/bin/jigsaw serve
 ```

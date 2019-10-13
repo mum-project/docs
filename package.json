@@ -8,20 +8,23 @@
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
-        "browser-sync": "^2.24.6",
+        "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^3.2.3",
         "hasbin": "^1.2.3",
-        "laravel-mix": "^2.0.0",
+        "laravel-mix": "^5.0.0",
         "node-cmd": "^3.0.0",
         "on-build-webpack": "^0.1.0",
-        "tailwindcss": "^0.6.1",
-        "vue.js": "^0.3.2",
+        "sass": "^1.23.0",
+        "sass-loader": "^8.0.0",
+        "tailwindcss": "^0.6.6",
+        "vue": "^2.6.10",
+        "vue-template-compiler": "^2.6.10",
         "webpack-watch": "^0.2.0",
         "yargs": "^4.6.0"
     },
     "dependencies": {
-        "anchor-js": "^4.1.1",
-        "prismjs": "^1.15.0"
+        "anchor-js": "^4.2.0",
+        "prismjs": "^1.17.1"
     }
 }
