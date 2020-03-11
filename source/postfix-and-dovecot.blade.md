@@ -20,7 +20,19 @@ all MySQL lookup files.
     @slot('filename', '/etc/postfix/main.cf')
 smtp_tls_policy_maps = mysql:/etc/postfix/sql/tls-policies.cf
 ...
-smtpd_recipient_restrictions = check_recipient_access mysql:/etc/postfix/sql/recipient-access.cf
+smtpd_recipient_restrictions = 
+    reject_non_fqdn_sender,   
+    reject_non_fqdn_recipient,   
+    reject_unknown_sender_domain,   
+    reject_unknown_recipient_domain,
+    reject_invalid_hostname,
+    warn_if_reject reject_unauth_pipelining,
+    check_recipient_access mysql:/etc/postfix/sql/recipient-access.cf,
+    permit_sasl_authenticated,
+    permit_mynetworks,
+    reject_unverified_recipient,
+    reject_unauth_destination,
+    permit
 ...
 virtual_alias_maps = mysql:/etc/postfix/sql/aliases.cf
 virtual_mailbox_maps = mysql:/etc/postfix/sql/mailboxes.cf
@@ -76,7 +88,7 @@ user = mum_postfix_user
 password = mum_postfix_password
 hosts = 127.0.0.1
 dbname = mum_database
-query = SELECT IF(send_only = 1, 'REJECT', 'OK') AS access FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 LIMIT 1;
+query = SELECT IF(send_only = 1, 'REJECT', 'DUNNO') AS access FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 LIMIT 1;
 @endcomponent
 
 ### Sender Login Maps
