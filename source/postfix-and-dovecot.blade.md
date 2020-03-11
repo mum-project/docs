@@ -76,7 +76,7 @@ user = mum_postfix_user
 password = mum_postfix_password
 hosts = 127.0.0.1
 dbname = mum_database
-query = SELECT IF(send_only = 1, 'REJECT', 'OK') AS access FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 LIMIT 1;
+query = SELECT IF(send_only = 1, 'REJECT', 'DUNNO') AS access FROM mailboxes INNER JOIN domains ON mailboxes.domain_id = domains.id WHERE mailboxes.local_part = '%u' AND domains.domain = '%d' AND domains.active = 1 AND mailboxes.active = 1 LIMIT 1;
 @endcomponent
 
 ### Sender Login Maps
