@@ -11,5 +11,5 @@ return [
             return substr_compare($page->getPath(), $path, -strlen($path), strlen($path)) === 0;
         });
     },
-    'version' => 'v0.1.3'
+    'version' => 'v0.1.5'
 ];
