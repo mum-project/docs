@@ -40,9 +40,9 @@ You will also need a working webserver like Apache2 or NGINX and a MySQL/MariaDB
     git clone https://github.com/mum-project/mum.git
     cd mum/
     ```
-2. Install the dependencies and compile the frontend Javascript code:
+2. Install the dependencies:
     ```bash
-    composer install
+    composer install --optimize-autoloader --no-dev
     ```
 3. Create a `.env` file for your local environment (and configure it) with
     ```bash
